@@ -21,3 +21,9 @@ scan on
 list
 pair XX:XX:XX:XX:XX:XX # the device to pair with.
 ```
+
+## Install C Library
+
+```
+sudo apt install libbluetooth-dev
+```
