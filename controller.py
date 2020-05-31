@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 # Python file for detecting Joystick and Button Input.
 import time
 
@@ -9,6 +11,24 @@ gpio = GPIO.get_platform_gpio()
 adapter = GPIO.RPiGPIOAdapter(gpio)
 adapter.setup(2, GPIO.IN)
 gpio.setup.assert_called_with(2, gpio.IN, pull_up_down=gpio.PUD_OFF)
+
+print("Starting...")
+
+gpio = GPIO.get_platform_gpio()
+
+print("Starting 2...")
+
+# adapter = GPIO.RPiGPIOAdapter(gpio)
+# print("Starting 3...")
+# adapter.setup(2, GPIO.IN)
+
+gpio.setup(2, GPIO.IN)
+
+# print("Starting 4...")
+ 
+#gpio.setup.assert_called_with(2, gpio.IN, pull_up_down=gpio.PUD_OFF)
+
+print("Starting 5...")
 
 # Software SPI configuration:
 CLK  = 11
@@ -25,4 +45,4 @@ while True:
     # Detect Y Axis
     jsy = mcp.read_adc(1)
 
-    print('X: ' + str(jsx) + ', Y: ' + str(jsy) + ', Z: ' + gpio.input(2))
+    print('X: ' + str(jsx) + ', Y: ' + str(jsy) + ', Z: ' + str(gpio.input(2)))
